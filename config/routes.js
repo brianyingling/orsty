@@ -5,6 +5,4 @@ module.exports = function(config) {
 
   app.get('/', home.index);
   app.get('/home', home.index);
-  
-
 }
