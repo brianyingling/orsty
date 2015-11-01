@@ -1,8 +1,9 @@
 #!/bin/sh
 
 # deployment script
-DEPLOYDIR=~/apps/orsty
+echo "post-receive hook started..."
 
+DEPLOYDIR=~/apps/orsty
 GIT_WORK_TREE ="$DEPLOYDIR" git checkout -f 
 
 cd "$DEPLOYDIR"
@@ -14,5 +15,7 @@ npm install
 forever start server.js
 
 echo "All done ;)"
+
+echo "post-receive hook finished."
 
 
