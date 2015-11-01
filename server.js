@@ -1,5 +1,6 @@
 var express = require('express');
 var path = require('path');
+var routes = require('./config/routes');
 var app = express();
 
 // controllers
@@ -18,7 +19,7 @@ var config = {
 }
 
 // routes
-require ('./config/routes')(config);
+routes(config);
 
 var server = app.listen(3000, function() {
   var host = server.address().address;
