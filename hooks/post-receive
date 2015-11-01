@@ -1,0 +1,17 @@
+#!/bin/sh
+
+DEPLOYDIR=~/apps/orsty
+
+GIT_WORK_TREE ="$DEPLOYDIR" git checkout -f 
+
+cd "$DEPLOYDIR"
+
+forever stop server.js
+
+npm install
+
+forever start server.js
+
+echo "All done ;)"
+
+
